@@ -3,9 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Склад — Мини-1С</title>
 <style>
-:root{--bg:#f2f5f3;--sf:#fff;--tx:#1b2622;--mu:#63716c;--ac:#c2410c;--on:#fff;--ln:#d3dbd7;--hl:#fdeee3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#121917;--sf:#1a2320;--tx:#e5ece9;--mu:#92a39d;--ac:#f59e0b;--on:#1a1200;--ln:#3a4350;--hl:#2b2418}}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#121917;--sf:#1a2320;--tx:#e5ece9;--mu:#92a39d;--ac:#f59e0b;--on:#1a1200;--ln:#3a4350;--hl:#2b2418}
+:root{--bg:#f3f4f6;--sf:#fff;--tx:#111827;--mu:#6b7280;--ac:#2563eb;--on:#fff;--ln:#e5e7eb;--hl:#eaf1ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0f172a;--sf:#1e293b;--tx:#e5e7eb;--mu:#94a3b8;--ac:#60a5fa;--on:#0b1220;--ln:#334155;--hl:#1e2a44}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0f172a;--sf:#1e293b;--tx:#e5e7eb;--mu:#94a3b8;--ac:#60a5fa;--on:#0b1220;--ln:#334155;--hl:#1e2a44}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 "Segoe UI",Roboto,Arial,sans-serif}
@@ -47,9 +47,49 @@ tr.t td{font-weight:700;background:var(--hl)}
 .paper{background:var(--sf);border:1px solid var(--ln);padding:22px;max-width:760px}
 .sig{display:flex;justify-content:space-between;gap:12px;margin-top:36px;flex-wrap:wrap}
 @media print{.np,header,nav{display:none!important}body{background:#fff;color:#000}.paper{border:0;padding:0;background:#fff}table{background:#fff}th,td{border-color:#000}th{background:#eee}}
+
+/* redesign v2 */
+body{font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;font-size:14px;background-image:none}
+header{background:var(--sf);color:var(--tx);border-bottom:1px solid var(--ln);padding:10px 20px;display:flex;align-items:center;gap:12px;justify-content:flex-start}
+header b{font-size:17px;color:var(--tx)}header .ic{color:var(--ac)}
+.gs{flex:1;max-width:440px;background:var(--bg);border:1px solid var(--ln);border-radius:10px;padding:9px 14px;color:var(--tx)}
+#who{margin-left:auto;font-weight:600;font-size:13px;display:flex;align-items:center;gap:8px}
+header button{color:var(--tx);background:var(--sf);border-color:var(--ln);padding:6px 12px;margin:0}
+nav{background:var(--sf);padding:0 8px}
+nav button{display:flex;align-items:center;gap:10px;border:0;border-radius:10px;color:var(--tx);font-size:13.5px;text-align:left}
+nav button.on{background:var(--hl);color:var(--ac);font-weight:600;border:0}
+.ib{width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:var(--c,#2563eb);flex:none}
+nav .ib .ic,.brand .ib .ic{color:#fff!important;width:16px!important;height:16px!important;margin:0!important}
+.brand{display:flex;align-items:center;gap:10px;padding:6px 8px 16px;font-weight:700;font-size:18px}
+.brand .ib{width:34px;height:34px;--c:#111827}
+main{padding:20px 22px 40px}
+h2{font-size:22px;margin:0 0 16px}h3{font-size:15px}
+input,select,textarea{border-radius:10px;border:1px solid var(--ln);background:var(--sf)}
+button{border-radius:10px}button.pr{background:var(--ac);border-color:var(--ac);color:var(--on);box-shadow:none}
+.hero{background:none;color:var(--tx);box-shadow:none;padding:0;border-radius:0;margin-bottom:6px}
+.hero h2{font-size:24px}.hero p{color:var(--mu)}.hero svg{display:none}
+.tiles{gap:14px}
+.tile{position:relative;display:flex;flex-direction:column-reverse;gap:4px;background:var(--sf);border:1px solid var(--ln);border-top:1px solid var(--ln);border-radius:14px;padding:14px 16px;box-shadow:none;font-size:12px;color:var(--mu)}
+.tile b{font-size:24px;color:var(--tx)}
+.tile .ic{position:absolute;top:12px;right:12px;width:30px!important;height:30px!important;padding:7px;border-radius:999px;background:var(--hl);color:var(--ac);margin:0}
+table{border-collapse:separate;border-spacing:0;border:1px solid var(--ln);border-radius:12px;overflow:hidden;box-shadow:none}
+th,td{border:0;border-bottom:1px solid var(--ln);padding:9px 12px}
+th{background:var(--bg);font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--mu)}
+tr:last-child td{border-bottom:0}
+tr.t td{background:var(--hl)}
+.paper table{border-radius:0}.paper th,.paper td{border:1px solid var(--ln)}
+.paper{border-radius:14px}
+@media(min-width:701px){
+ body{display:grid;grid-template-columns:236px minmax(0,1fr);grid-template-rows:auto 1fr;min-height:100vh}
+ nav{grid-column:1;grid-row:1/3;display:flex;flex-direction:column;flex-wrap:nowrap;gap:2px;padding:16px 12px;border-right:1px solid var(--ln);border-bottom:0;box-shadow:none;position:sticky;top:0;height:100vh;overflow-y:auto}
+ header{grid-column:2;grid-row:1}main{grid-column:2;grid-row:2}
+ .hb{display:none}
+}
+@media(max-width:700px){.brand{display:none}nav .ib{width:26px;height:26px}nav button{gap:3px;padding:6px 10px}header{padding:8px 12px}.hb{display:block}.gs{max-width:none}#who{font-size:11px}}
+@media print{body{display:block!important;background:#fff!important}main{padding:0}.paper th,.paper td{border-color:#000}}
 </style></head>
 <body>
-<header class="np"><div><b><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>Склад</b><span>Мини-1С · v1.0</span></div><div id="who"></div></header>
+<header class="np"><div class="hb"><b>Склад</b></div><input id="gs" class="gs" placeholder="Поиск по журналу…" onkeydown="if(event.key=='Enter'){jrQ=this.value;jrDate='';cur='jr';go('jr')}"><div id="who"></div></header>
 <nav id="nav"></nav>
 <main><div id="v"></div></main>
 <div id="toast" class="np"></div>
@@ -70,7 +110,7 @@ const stock=p=>sum(D.rec,r=>sum(r.items.filter(i=>i.p===p),i=>i.q))-sum(D.iss,r=
 const rem=(kg,p)=>({reg:(D.reg[kg]||{})[p],used:sum(D.iss.filter(x=>x.kg===kg),x=>sum(x.items.filter(i=>i.p===p),i=>i.q))});
 const tabs=[['home','Главная'],['rec','Приход'],['iss','Расход'],['inv','Фактура'],['sup','Поставщики'],['kgv','Детсады'],['rep','Отчёты'],['sv','Свод и остатки'],['jr','Журнал документов'],['st','Остатки'],['fin','Деньги'],['log','Действия'],['ref','Справочники']];
 let cur='rec',rows=[],sel=null;
-function nav(){$('#who').innerHTML=esc(me.name)+(me.role=='admin'?' (редактор)':'')+'<button onclick="logout()">Выйти</button>';$('#nav').innerHTML=tabs.filter(t=>!['ref','fin','log'].includes(t[0])||me.role=='admin').map(t=>`<button class="${t[0]==cur?'on':''}" onclick="navTo('${t[0]}')">${ic(t[0])}${t[1]}</button>`).join('')}
+function nav(){$('#who').innerHTML=esc(me.name)+(me.role=='admin'?' (редактор)':'')+'<button onclick="logout()">Выйти</button>';$('#nav').innerHTML='<div class="brand"><span class="ib" style="--c:#111827">'+ic('box')+'</span>Склад</div>'+tabs.filter(t=>!['ref','fin','log'].includes(t[0])||me.role=='admin').map(t=>`<button class="${t[0]==cur?'on':''}" onclick="navTo('${t[0]}')"><span class="ib" style="--c:${COL[t[0]]||'#64748b'}">${ic(t[0])}</span><span>${t[1]}</span></button>`).join('')}
 function go(t){editing=null;if(!me)return login();if(['ref','fin','log'].includes(t)&&me.role!='admin')t='home';cur=t;rows=[{p:'',q:''}];$('#pl').innerHTML=D.prods.map(p=>`<option value="${esc(p.name)}">`).join('');nav();V[t]()}
 function box(text){let t=$('#cp');if(!t){t=document.createElement('textarea');t.id='cp';t.rows=8;$('#v').appendChild(t)}t.value=text;t.select();try{document.execCommand('copy')}catch(e){}}
 function noProds(){if(D.prods.length)return false;$('#v').innerHTML='<h2>Нет товаров</h2><p>Сначала добавьте товары в разделе «Справочники».</p>';return true}
@@ -217,7 +257,7 @@ db={doc(path){const [c,id]=path.split('/');return{
  collection(c){return{onSnapshot:(cb,eb)=>watch(c,rows=>cb({docs:rows.map(r=>({data:()=>r.data}))}),eb)}}};
 function login(){loginScreen()}
 function loginScreen(){me=null;$('#nav').innerHTML='';$('#who').innerHTML='';$('#v').innerHTML=`<div class="paper lg"><h2>Вход</h2><div class="bar"><label>Почта<input id="em" type="email" autocomplete="username"></label><label>Пароль<input id="pw" type="password" autocomplete="current-password"></label><button class="pr" onclick="signIn()">Войти</button></div></div>`;$('#pw').onkeydown=e=>{if(e.key=='Enter')signIn()}}
-async function signIn(){const r=await SB.auth.signInWithPassword({email:$('#em').value.trim(),password:$('#pw').value});if(r.error)return alert('Неверная почта или пароль');start()}
+async function signIn(){const r=await SB.auth.signInWithPassword({email:$('#em').value.trim().toLowerCase(),password:$('#pw').value});if(r.error){const m=String(r.error.message||'');return alert(/invalid login/i.test(m)?'Неверная почта или пароль. Проверьте, что нет лишнего пробела и заглавной буквы в почте.':/confirm/i.test(m)?'Почта не подтверждена. Администратор должен включить Auto Confirm User в Supabase.':'Ошибка входа: '+m)}start()}
 function logout(){SB.auth.signOut().then(()=>location.reload())}
 async function start(){
  const {data:{session}}=await SB.auth.getSession();if(!session)return loginScreen();
@@ -281,6 +321,7 @@ function repDraw(){const a=repA,b=repB,kgs=repK=='*'?D.kgs:[repK],q=repQ.toLower
    h=`<div class="mx"><table><tr><th>Товар</th>${ds.map(d=>`<th>${d.slice(8)}.${d.slice(5,7)}</th>`).join('')}<th>Итого</th></tr>${ps.map(p=>`<tr><td>${esc(p)} <span class="mu">${u(p)}</span></td>${ds.map(d=>{const v=qty(p,r=>r.date==d);return `<td>${v?nf(v):''}</td>`}).join('')}<td><b>${nf(qty(p,()=>true))}</b></td></tr>`).join('')}</table></div>`}}
  $('#out').innerHTML=h}
 
+const COL={home:'#2563eb',rec:'#16a34a',iss:'#f97316',inv:'#7c3aed',sup:'#0d9488',kgv:'#4f46e5',rep:'#db2777',sv:'#d97706',jr:'#475569',st:'#0891b2',fin:'#059669',log:'#e11d48',ref:'#64748b'};
 start();
 </script>
 </body></html>
